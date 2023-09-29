@@ -12,6 +12,7 @@ import "../App.css"
 
 function Main() {
     const [activeQuestion, setActiveQuestion] = useState(0);
+    const [score, setScore] = useState(0);
 
     const nextBtn = () => {
        if((activeQuestion +1) < jsonData.length){
@@ -27,16 +28,16 @@ function Main() {
       <div>
           <ProgressBar activeQuestion={activeQuestion}></ProgressBar>
       </div>
-      <div className="main-content">
+      <div className="main-content mt-5">
         <QuesNumber activeQuestion={activeQuestion}></QuesNumber>
         <StarRate activeQuestion={activeQuestion}></StarRate>
         <Questions activeQuestion={activeQuestion}></Questions>
-        <Options activeQuestion={activeQuestion}></Options>
+        <Options activeQuestion={activeQuestion} setScore={setScore} score={score}></Options>
         <Button nextBtn ={nextBtn}></Button>
       </div>
     </div>
     <div>
-      <ScoreProgress></ScoreProgress>
+      <ScoreProgress activeQuestion={activeQuestion} score={score}></ScoreProgress>
     </div>
     </DataProvider>
   );

@@ -8,7 +8,7 @@ function QuesNumber({activeQuestion}) {
     <div className="App">
      <div>Question {activeQuestion +1} of {jsonData.length}</div>
      <div className='entertainment'>
-        <span>{decodeURI(jsonData[activeQuestion]?.category)}</span>
+        <span>{decodeURIComponent(jsonData[activeQuestion]?.category)}</span>
      </div>
     </div>
   );

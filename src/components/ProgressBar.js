@@ -12,6 +12,7 @@ function ProgressBar({activeQuestion}) {
     <div>
       <div className="progress">
         <div className="progressBar" role="progressbar" style={{ width: progress + "%" }}>
+          
         </div>
       </div>
     </div>

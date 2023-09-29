@@ -6,7 +6,7 @@ function Questions({activeQuestion}) {
   
     return (
     <div className="question">
-     <div>{decodeURI(jsonData[activeQuestion]?.question)}</div>
+     <div>{decodeURIComponent(jsonData[activeQuestion]?.question)}</div>
     </div>
   );
 }

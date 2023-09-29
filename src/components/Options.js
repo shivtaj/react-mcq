@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useData } from '../context/DataContext';
 import "../App.css";
 
-function Options({activeQuestion}) {
+function Options({activeQuestion, setScore, score}) {
     const { jsonData } = useData();
     const [totalOption, setTotalOption] = useState([]);
     const [rightAnswer, setRightAnswer] = useState(false);
@@ -33,6 +33,7 @@ function Options({activeQuestion}) {
       const correctOptionIndex = totalOption.findIndex(ele => ele === jsonData[activeQuestion]?.correct_answer); 
       if(index == correctOptionIndex){
         setRightAnswer(true);
+        setScore(score+1)
       }else{
         setRightAnswer(false);
       }
